@@ -279,7 +279,7 @@ const Auth: React.FC = () => {
               SignIn with Google
             </Button>
           </form>
-
+         {/* openModalがtrueであればmodalが開く */}
           <Modal open={openModal} onClose={() => setOpenModal(false)}>
             <div style={getModalStyle()} className={classes.modal}>
               <div className={styles.login_modal}>
