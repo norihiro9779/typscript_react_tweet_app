@@ -1,9 +1,11 @@
 import React from "react";
 import { auth } from "../firebase";
+import TweetInput from "./TweetInput";
 
 const Feed = () => {
   return (
     <div>
+      <TweetInput />
       Feed
       <button onClick={() => auth.signOut()}>Logout</button>
     </div>
