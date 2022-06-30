@@ -20,6 +20,7 @@ function TweetInput() {
   };
   const sendTweet = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // 写真がある場合
     if (tweetImage) {
       const S =
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -29,6 +30,7 @@ function TweetInput() {
         .join("");
       const fileName = randomChar + "_" + tweetImage.name;
       const uploadTweetImg = storage.ref(`images/${fileName}`).put(tweetImage);
+      // storageに足して何らかの変化があった場合に、実行される
       uploadTweetImg.on(
         firebase.storage.TaskEvent.STATE_CHANGED,
         () => {},
