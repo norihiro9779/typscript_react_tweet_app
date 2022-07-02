@@ -50,7 +50,7 @@ const Post: React.FC<PROPS> = (props) => {
   ]);
 
   useEffect(() => {
-    const unSub = db
+    const unSub = db //firebaseの投稿に対したコメントを取得
       .collection("posts")
       .doc(props.postId)
       .collection("comments")
@@ -111,7 +111,7 @@ const Post: React.FC<PROPS> = (props) => {
           className={styles.post_commentIcon}
           onClick={() => setOpenComments(!openComments)}
         />
-
+        {/* openCommentsがtrueのときだけフラグメントが表示される */}
         {openComments && (
           <>
             {comments.map((com) => (
